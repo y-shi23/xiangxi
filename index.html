@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>湘西 - 神秘而迷人的地方</title>
+    <title>湘西 - 神秘而迷人</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -541,14 +541,13 @@
     </main>
 
     <script>
-        // 循环打字机效果
+        
         document.addEventListener('DOMContentLoaded', function() {
             const titleElement = document.getElementById('typing-title');
             const originalText = '湘西 <span class="text-accent">神秘而迷人</span>';
             let isTyping = true;
             let charIndex = 0;
             
-            // 移除HTML标签用于计算字符长度
             const getTextLength = (html) => {
                 const temp = document.createElement('div');
                 temp.innerHTML = html;
@@ -559,16 +558,15 @@
             
             const typeWriter = function() {
                 if (isTyping) {
-                    // 打字阶段
+
                     if (charIndex < textLength) {
-                        // 逐字符添加，保持HTML结构
+
                         const temp = document.createElement('div');
                         temp.innerHTML = originalText;
                         const plainText = temp.textContent;
                         
                         let currentPlainText = plainText.substring(0, charIndex + 1);
                         
-                        // 重建HTML结构
                         if (currentPlainText.length > 3 && currentPlainText.includes('神秘而迷人')) {
                             const beforeSpan = currentPlainText.substring(0, 3); // "湘西 "
                             const spanContent = currentPlainText.substring(3);
@@ -580,12 +578,10 @@
                         charIndex++;
                         setTimeout(typeWriter, 150);
                     } else {
-                        // 打字完成，等待后开始删除
                         isTyping = false;
                         setTimeout(typeWriter, 2000);
                     }
                 } else {
-                    // 删除阶段
                     if (charIndex > 0) {
                         charIndex--;
                         const temp = document.createElement('div');
@@ -594,7 +590,6 @@
                         
                         let currentPlainText = plainText.substring(0, charIndex);
                         
-                        // 重建HTML结构
                         if (currentPlainText.length > 3 && currentPlainText.includes('神秘而迷人')) {
                             const beforeSpan = currentPlainText.substring(0, 3); // "湘西 "
                             const spanContent = currentPlainText.substring(3);
@@ -605,14 +600,12 @@
                         
                         setTimeout(typeWriter, 100);
                     } else {
-                        // 删除完成，等待后重新开始打字
                         isTyping = true;
                         setTimeout(typeWriter, 1000);
                     }
                 }
             };
             
-            // 初始化
             titleElement.innerHTML = '';
             typeWriter();
         });
