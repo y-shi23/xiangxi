@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>湘西 - 神秘而迷人的地方</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'KongShan';
+            src: url('kongshan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E5128',
+                        secondary: '#4E9F3D',
+                        accent: '#D8E9A8',
+                        dark: '#191A19',
+                        light: '#F5F5F5'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                        kongshan: ['KongShan', 'Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            }
+            .text-shadow-lg {
+                text-shadow: 0 4px 8px rgba(0,0,0,0.7);
+            }
+            .bg-blur {
+                backdrop-filter: blur(8px);
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            .animate-fade-in {
+                animation: fadeIn 1s ease-in-out;
+            }
+            .typing-animation::after {
+                content: '|';
+                animation: typingCursor 0.7s infinite;
+            }
+            .animate-breathing {
+                animation: breathing 2s ease-in-out infinite;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes typingCursor {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0; }
+            }
+            @keyframes breathing {
+                0%, 100% { 
+                    opacity: 1; 
+                    transform: translateY(0px) scale(1);
+                }
+                50% { 
+                    opacity: 0.3; 
+                    transform: translateY(-5px) scale(1.1);
+                }
+            }
+        }
+    </style>
+</head>
+<body class="font-kongshan bg-light text-dark antialiased">
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- 版权声明 -->
+        <div class="absolute top-4 right-4 z-20 text-white/70 text-xs">
+            网站仅用于学习，素材源于网络，归原作者所有
+        </div>
+        <div class="absolute inset-0 z-0">
+            <img src="fenghuang_back.jpg" alt="湘西自然风光" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-dark/60 to-dark/90"></div>
+        </div>
+        <div class="container mx-auto px-4 z-10 text-center">
+            <h1 class="text-[clamp(2.5rem,6vw,5rem)] font-bold text-white mb-6 text-shadow-lg typing-animation" id="typing-title">
+                湘西 <span class="text-accent">神秘而迷人</span>
+            </h1>
+            <p class="text-[clamp(1rem,2vw,1.5rem)] text-white/90 max-w-3xl mx-auto mb-10 text-shadow">
+                探索中国湖南的这片神奇土地，体验独特的自然风光与浓郁的民族文化
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#attractions" class="px-8 py-3 bg-primary hover:bg-primary/90 text-white rounded-full transition-all transform hover:scale-105 shadow-lg">
+                    探索景点
+                </a>
+                <a href="#culture" class="px-8 py-3 bg-transparent border-2 border-white text-white hover:bg-white/10 rounded-full transition-all transform hover:scale-105">了解文化</a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-breathing">
+            <a href="#about" class="flex flex-col items-center">
+                <span class="mb-2">向下滚动</span>
+                <i class="fa fa-chevron-down"></i>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 关于湘西 -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-dark mb-4">关于湘西</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        湘西土家族苗族自治州位于湖南省西北部，是中国少数民族聚居地之一，拥有丰富的自然景观和独特的民族文化。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <h3 class="text-2xl font-semibold mb-6 text-primary">地理位置与历史</h3>
+                        <p class="text-gray-700 mb-6">
+                            湘西地处云贵高原东侧的武陵山区，地势西北高、东南低，境内山峦起伏，溪河纵横。这里是古代巴楚文化与百越文化交汇的地方，有着悠久的历史和丰富的文化遗产。
+                        </p>
+                        <h3 class="text-2xl font-semibold mb-6 text-primary">民族与文化</h3>
+                        <p class="text-gray-700 mb-6">
+                            湘西是土家族和苗族的主要聚居地，两个民族都有着独特的传统文化、习俗和艺术形式。土家族的摆手舞、苗族的芦笙舞以及独特的吊脚楼建筑，都是湘西文化的瑰宝。
+                        </p>
+                        <div class="flex flex-wrap gap-4 mt-8">
+                            <div class="bg-accent/30 rounded-lg p-4 flex-1 min-w-[120px]">
+                                <div class="text-3xl font-bold text-primary mb-1">43</div>
+                                <div class="text-sm text-gray-600">民族</div>
+                            </div>
+                            <div class="bg-accent/30 rounded-lg p-4 flex-1 min-w-[120px]">
+                                <div class="text-3xl font-bold text-primary mb-1">8</div>
+                                <div class="text-sm text-gray-600">个县级行政区</div>
+                            </div>
+                            <div class="bg-accent/30 rounded-lg p-4 flex-1 min-w-[120px]">
+                                <div class="text-3xl font-bold text-primary mb-1">249万</div>
+                                <div class="text-sm text-gray-600">常住人口</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2 relative">
+                        <img src="https://picsum.photos/id/1039/800/600" alt="湘西山水风光" class="w-full h-auto rounded-xl shadow-xl">
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mr-3">
+                                    <i class="fa fa-map-o text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">总面积</div>
+                                    <div class="text-primary font-bold">15,462 km²</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 景点 -->
+        <section id="attractions" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-dark mb-4">湘西景点</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        湘西以其壮丽的自然风光和独特的人文景观吸引着无数游客。从古老的吊脚楼到清澈的溪流，每一处都展现着湘西的独特魅力。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 景点卡片 1 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://picsum.photos/id/1043/600/400" alt="凤凰古城" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">凤凰古城</h3>
+                                <div class="flex items-center">
+                                    <i class="fa fa-map-marker mr-1"></i>
+                                    <span class="text-sm">湘西土家族苗族自治州</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600 mb-4">
+                                凤凰古城是中国历史文化名城，保存了大量明清时期的建筑和传统文化。沱江穿城而过，两岸的吊脚楼别具一格。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <div class="text-yellow-400 flex">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm ml-2">4.5 (2,341 评价)</span>
+                                </div>
+                                <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center">
+                                    More <i class="fa fa-arrow-right ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 景点卡片 2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://picsum.photos/id/1037/600/400" alt="张家界国家森林公园" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">张家界国家森林公园</h3>
+                                <div class="flex items-center">
+                                    <i class="fa fa-map-marker mr-1"></i>
+                                    <span class="text-sm">张家界市</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600 mb-4">
+                                张家界国家森林公园以其独特的石英砂岩峰林地貌而闻名，被誉为"中国山水画的原本"，是世界自然遗产和世界地质公园。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <div class="text-yellow-400 flex">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm ml-2">4.9 (3,782 评价)</span>
+                                </div>
+                                <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center">
+                                    More <i class="fa fa-arrow-right ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 景点卡片 3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://picsum.photos/id/1041/600/400" alt="芙蓉镇" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">芙蓉镇</h3>
+                                <div class="flex items-center">
+                                    <i class="fa fa-map-marker mr-1"></i>
+                                    <span class="text-sm">永顺县</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600 mb-4">
+                                芙蓉镇是一座具有2000多年历史的古镇，因电影《芙蓉镇》在此拍摄而闻名。镇内有瀑布穿镇而过，形成独特的"挂在瀑布上的千年古镇"景观。
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <div class="text-yellow-400 flex">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm ml-2">4.2 (1,567 评价)</span>
+                                </div>
+                                <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center">
+                                    More <i class="fa fa-arrow-right ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文化 -->
+        <section id="culture" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-dark mb-4">湘西文化</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        湘西拥有悠久的历史和独特的民族文化，土家族和苗族的传统习俗、艺术和建筑构成了这片土地的文化精髓。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- 文化卡片 1 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+                        <div class="h-56 overflow-hidden">
+                            <img src="https://picsum.photos/id/1040/600/400" alt="土家族摆手舞" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3 text-primary">土家族摆手舞</h3>
+                            <p class="text-gray-600">
+                                摆手舞是土家族最具代表性的传统舞蹈，已有数千年历史。舞蹈动作多模仿农事、狩猎和军事活动，节奏明快，动作刚劲有力。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 文化卡片 2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+                        <div class="h-56 overflow-hidden">
+                            <img src="https://picsum.photos/id/1045/600/400" alt="苗族芦笙舞" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3 text-primary">苗族芦笙舞</h3>
+                            <p class="text-gray-600">
+                                芦笙舞是苗族文化的重要组成部分，舞者边吹芦笙边跳舞，动作轻盈优美，节奏富有变化。每年的苗年节，芦笙舞是最主要的庆祝活动之一。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 文化卡片 3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+                        <div class="h-56 overflow-hidden">
+                            <img src="https://picsum.photos/id/1047/600/400" alt="吊脚楼建筑" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3 text-primary">吊脚楼建筑</h3>
+                            <p class="text-gray-600">
+                                吊脚楼是湘西少数民族的传统民居，建筑风格独特，飞檐翘角，临水而建。这种建筑既适应了山区地形，又体现了当地民族的智慧和审美。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 美食 -->
+        <section id="food" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-dark mb-4">湘西美食</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        湘西美食以其独特的口味和丰富的民族特色而闻名，融合了土家族和苗族的烹饪传统，辣、酸、香是其主要特点。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 美食卡片 1 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://picsum.photos/id/1080/600/400" alt="湘西酸鱼" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">湘西酸鱼</h3>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600 mb-4">
+                                湘西酸鱼是土家族和苗族的传统名菜，以新鲜鱼肉为主料，配以糯米粉、辣椒、生姜等调料腌制而成，口感酸辣可口，香气扑鼻。
+                            </p>
+                            <div class="flex items-center">
+                                <div class="text-sm text-gray-500 mr-3">
+                                    <i class="fa fa-fire text-red-500 mr-1"></i> 辣度: 🌶🌶🌶
+                                </div>
+                                <div class="text-sm text-gray-500">
+                                    <i class="fa fa-leaf text-green-500 mr-1"></i> 特色: 酸辣鲜香
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 美食卡片 2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://picsum.photos/id/1081/600/400" alt="血粑鸭" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">血粑鸭</h3>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600 mb-4">
+                                血粑鸭是湘西地区的传统名菜，将鸭血与糯米混合制成血粑，再与鸭肉一起烹制，色泽红亮，口感软糯，味道醇厚。
+                            </p>
+                            <div class="flex items-center">
+                                <div class="text-sm text-gray-500 mr-3">
+                                    <i class="fa fa-fire text-red-500 mr-1"></i> 辣度: 🌶🌶
+                                </div>
+                                <div class="text-sm text-gray-500">
+                                    <i class="fa fa-leaf text-green-500 mr-1"></i> 特色: 软糯香浓
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 美食卡片 3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://picsum.photos/id/1082/600/400" alt="苗家社饭" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">苗家社饭</h3>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600 mb-4">
+                                社饭是苗族祭祀社稷时所做的饭，用青蒿、野葱、腊肉等与糯米一起蒸煮而成，清香可口，是苗族人喜爱的传统美食。
+                            </p>
+                            <div class="flex items-center">
+                                <div class="text-sm text-gray-500 mr-3">
+                                    <i class="fa fa-fire text-red-500 mr-1"></i> 辣度: 🌶
+                                </div>
+                                <div class="text-sm text-gray-500">
+                                    <i class="fa fa-leaf text-green-500 mr-1"></i> 特色: 清香软糯
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 名人 -->
+        <section id="celebrities" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-dark mb-4">湘西名人</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        湘西这片土地孕育了许多杰出人物，他们在文学、艺术、政治等领域都取得了卓越成就，为中华文化的发展做出了重要贡献。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 名人卡片 1 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/3 h-48 md:h-auto overflow-hidden">
+                                <img src="https://picsum.photos/id/1005/300/400" alt="沈从文" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <h3 class="text-xl font-bold mb-2 text-primary">沈从文</h3>
+                                <p class="text-sm text-gray-500 mb-3">1902-1988 | 作家、历史学家</p>
+                                <p class="text-gray-600">
+                                    沈从文是中国现代著名作家，代表作有《边城》《长河》等。他的作品以湘西为背景，描绘了当地的风土人情和人性之美，具有独特的艺术风格。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 名人卡片 2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/3 h-48 md:h-auto overflow-hidden">
+                                <img src="https://picsum.photos/id/1012/300/400" alt="黄永玉" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <h3 class="text-xl font-bold mb-2 text-primary">黄永玉</h3>
+                                <p class="text-sm text-gray-500 mb-3">1924-2023 | 画家、作家</p>
+                                <p class="text-gray-600">
+                                    黄永玉是中国著名画家、作家，以版画、油画和文学作品闻名。他的作品风格独特，充满了对生活的热爱和对家乡湘西的深情。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 名人卡片 3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/3 h-48 md:h-auto overflow-hidden">
+                                <img src="https://picsum.photos/id/1027/300/400" alt="宋祖英" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <h3 class="text-xl font-bold mb-2 text-primary">宋祖英</h3>
+                                <p class="text-sm text-gray-500 mb-3">1966- | 歌唱家</p>
+                                <p class="text-gray-600">
+                                    宋祖英是中国著名女高音歌唱家，以演唱中国民族歌曲而闻名。她出生于湘西古丈县，多次在国际舞台上展示中国音乐的魅力。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 照片集 -->
+        <section id="gallery" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-dark mb-4">湘西风光</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        湘西的自然风光和人文景观令人叹为观止，这里的每一张照片都展现了这片土地的独特魅力。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="overflow-hidden rounded-lg group">
+                        <img src="https://picsum.photos/id/1039/500/500" alt="湘西山水" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-lg group">
+                        <img src="https://picsum.photos/id/1040/500/500" alt="吊脚楼" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-lg group">
+                        <img src="https://picsum.photos/id/1041/500/500" alt="古镇风光" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-lg group">
+                        <img src="https://picsum.photos/id/1042/500/500" alt="山间云雾" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-lg group">
+                        <img src="https://picsum.photos/id/1043/500/500" alt="沱江风光" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-lg group">
+                        <img src="https://picsum.photos/id/1044/500/500" alt="少数民族服饰" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-lg group">
+                        <img src="https://picsum.photos/id/1045/500/500" alt="传统节日" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-lg group">
+                        <img src="https://picsum.photos/id/1046/500/500" alt="乡村风光" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // 循环打字机效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const titleElement = document.getElementById('typing-title');
+            const originalText = '湘西 <span class="text-accent">神秘而迷人</span>';
+            let isTyping = true;
+            let charIndex = 0;
+            
+            // 移除HTML标签用于计算字符长度
+            const getTextLength = (html) => {
+                const temp = document.createElement('div');
+                temp.innerHTML = html;
+                return temp.textContent.length;
+            };
+            
+            const textLength = getTextLength(originalText);
+            
+            const typeWriter = function() {
+                if (isTyping) {
+                    // 打字阶段
+                    if (charIndex < textLength) {
+                        // 逐字符添加，保持HTML结构
+                        const temp = document.createElement('div');
+                        temp.innerHTML = originalText;
+                        const plainText = temp.textContent;
+                        
+                        let currentPlainText = plainText.substring(0, charIndex + 1);
+                        
+                        // 重建HTML结构
+                        if (currentPlainText.length > 3 && currentPlainText.includes('神秘而迷人')) {
+                            const beforeSpan = currentPlainText.substring(0, 3); // "湘西 "
+                            const spanContent = currentPlainText.substring(3);
+                            titleElement.innerHTML = beforeSpan + '<span class="text-accent">' + spanContent + '</span>';
+                        } else {
+                            titleElement.innerHTML = currentPlainText;
+                        }
+                        
+                        charIndex++;
+                        setTimeout(typeWriter, 150);
+                    } else {
+                        // 打字完成，等待后开始删除
+                        isTyping = false;
+                        setTimeout(typeWriter, 2000);
+                    }
+                } else {
+                    // 删除阶段
+                    if (charIndex > 0) {
+                        charIndex--;
+                        const temp = document.createElement('div');
+                        temp.innerHTML = originalText;
+                        const plainText = temp.textContent;
+                        
+                        let currentPlainText = plainText.substring(0, charIndex);
+                        
+                        // 重建HTML结构
+                        if (currentPlainText.length > 3 && currentPlainText.includes('神秘而迷人')) {
+                            const beforeSpan = currentPlainText.substring(0, 3); // "湘西 "
+                            const spanContent = currentPlainText.substring(3);
+                            titleElement.innerHTML = beforeSpan + '<span class="text-accent">' + spanContent + '</span>';
+                        } else {
+                            titleElement.innerHTML = currentPlainText;
+                        }
+                        
+                        setTimeout(typeWriter, 100);
+                    } else {
+                        // 删除完成，等待后重新开始打字
+                        isTyping = true;
+                        setTimeout(typeWriter, 1000);
+                    }
+                }
+            };
+            
+            // 初始化
+            titleElement.innerHTML = '';
+            typeWriter();
+        });
+    </script>
+</body>
+</html>
