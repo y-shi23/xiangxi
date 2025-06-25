@@ -89,13 +89,61 @@
     </style>
 </head>
 <body class="font-kongshan bg-light text-dark antialiased">
+    <!-- 弹窗卡片 -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center">
+        <div id="modal-card" class="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 p-8 transform transition-all duration-300 scale-100">
+            <!-- 卡片头部 -->
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa fa-info-circle text-3xl text-primary"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-dark mb-2">网站声明</h2>
+            </div>
+            
+            <!-- 声明内容 -->
+            <div class="space-y-4 text-gray-700">
+                <div class="bg-accent/20 rounded-lg p-4 text-center">
+                    <p class="text-sm font-medium">网站仅用于学习，素材源于网络，归原作者所有</p>
+                </div>
+                
+                <!-- 信息列表 -->
+                <div class="space-y-3">
+                    <div class="flex items-center">
+                        <i class="fa fa-user text-primary w-5"></i>
+                        <span class="ml-3 text-sm"><strong>作者：</strong>ocean</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fa fa-book text-primary w-5"></i>
+                        <span class="ml-3 text-sm"><strong>课程：</strong>计算概论</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fa fa-calendar text-primary w-5"></i>
+                        <span class="ml-3 text-sm"><strong>更新：</strong>2025-6-25</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fa fa-github text-primary w-5"></i>
+                        <span class="ml-3 text-sm"><strong>repo：</strong></span>
+                        <a href="https://github.com" target="_blank" class="ml-2 text-primary hover:text-primary/80 transition-colors">
+                            <i class="fa fa-external-link text-sm"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 关闭提示 -->
+            <div class="mt-6 text-center">
+                <p class="text-xs text-gray-500">点击卡片外任意位置关闭</p>
+            </div>
+        </div>
+    </div>
+    
     <header class="relative h-screen flex items-center justify-center overflow-hidden">
         <!-- 版权声明 -->
         <div class="absolute top-4 right-4 z-20 text-white/70 text-xs">
             网站仅用于学习，素材源于网络，归原作者所有
         </div>
         <div class="absolute inset-0 z-0">
-            <img src="fenghuang_back.jpg" alt="湘西自然风光" class="w-full h-full object-cover">
+            <img src="./assets/background.jpg" alt="湘西自然风光" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-b from-dark/60 to-dark/90"></div>
         </div>
         <div class="container mx-auto px-4 z-10 text-center">
@@ -140,7 +188,7 @@
                         </p>
                         <h3 class="text-2xl font-semibold mb-6 text-primary">民族与文化</h3>
                         <p class="text-gray-700 mb-6">
-                            湘西是土家族和苗族的主要聚居地，两个民族都有着独特的传统文化、习俗和艺术形式。土家族的摆手舞、苗族的芦笙舞以及独特的吊脚楼建筑，都是湘西文化的瑰宝。
+                            湘西是土家族和苗族的主要聚居地，两个民族都有着独特的传统文化、习俗和艺术形式。土家族的摆手舞、苗族的银饰以及独特的吊脚楼建筑，都是湘西文化的瑰宝。
                         </p>
                         <div class="flex flex-wrap gap-4 mt-8">
                             <div class="bg-accent/30 rounded-lg p-4 flex-1 min-w-[120px]">
@@ -158,7 +206,7 @@
                         </div>
                     </div>
                     <div class="order-1 md:order-2 relative">
-                        <img src="https://picsum.photos/id/1039/800/600" alt="湘西山水风光" class="w-full h-auto rounded-xl shadow-xl">
+                        <img src="./assets/back.jpg" alt="湘西山水风光" class="w-full h-auto rounded-xl shadow-xl">
                         <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg hidden md:block">
                             <div class="flex items-center">
                                 <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mr-3">
@@ -166,7 +214,7 @@
                                 </div>
                                 <div>
                                     <div class="font-semibold">总面积</div>
-                                    <div class="text-primary font-bold">15,462 km²</div>
+                                    <div class="text-primary font-bold">15,470 km²</div>
                                 </div>
                             </div>
                         </div>
@@ -190,13 +238,13 @@
                     <!-- 景点卡片 1 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
                         <div class="relative h-64 overflow-hidden">
-                            <img src="https://picsum.photos/id/1043/600/400" alt="凤凰古城" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <img src="./assets/fenghuang.jpg" alt="凤凰古城" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent"></div>
                             <div class="absolute bottom-4 left-4 text-white">
                                 <h3 class="text-xl font-bold">凤凰古城</h3>
                                 <div class="flex items-center">
                                     <i class="fa fa-map-marker mr-1"></i>
-                                    <span class="text-sm">湘西土家族苗族自治州</span>
+                                    <span class="text-sm">凤凰县</span>
                                 </div>
                             </div>
                         </div>
@@ -213,9 +261,9 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star-half-o"></i>
                                     </div>
-                                    <span class="text-gray-500 text-sm ml-2">4.5 (2,341 评价)</span>
+                                    <span class="text-gray-500 text-sm ml-2">4.7 (4,271 评价)</span>
                                 </div>
-                                <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center">
+                                <a href="https://fhatt.cn/" class="text-primary hover:text-primary/80 font-medium flex items-center">
                                     More <i class="fa fa-arrow-right ml-1"></i>
                                 </a>
                             </div>
@@ -225,19 +273,19 @@
                     <!-- 景点卡片 2 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
                         <div class="relative h-64 overflow-hidden">
-                            <img src="https://picsum.photos/id/1037/600/400" alt="张家界国家森林公园" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <img src="./assets/bamianshan.jpg" alt="八面山" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent"></div>
                             <div class="absolute bottom-4 left-4 text-white">
-                                <h3 class="text-xl font-bold">张家界国家森林公园</h3>
+                                <h3 class="text-xl font-bold">八面山</h3>
                                 <div class="flex items-center">
                                     <i class="fa fa-map-marker mr-1"></i>
-                                    <span class="text-sm">张家界市</span>
+                                    <span class="text-sm">龙山县</span>
                                 </div>
                             </div>
                         </div>
                         <div class="p-6">
                             <p class="text-gray-600 mb-4">
-                                张家界国家森林公园以其独特的石英砂岩峰林地貌而闻名，被誉为"中国山水画的原本"，是世界自然遗产和世界地质公园。
+                                八面山是云雾和岩溶台地的秘境。山巅草原枕着星子，崖间溶洞藏着千年故事，任风在1400米的海拔上写成流动的诗行。
                             </p>
                             <div class="flex justify-between items-center">
                                 <div class="flex items-center">
@@ -246,11 +294,11 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
                                     </div>
-                                    <span class="text-gray-500 text-sm ml-2">4.9 (3,782 评价)</span>
+                                    <span class="text-gray-500 text-sm ml-2">4.7 (404 评价)</span>
                                 </div>
-                                <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center">
+                                <a href="https://baike.baidu.com/item/%E6%B9%98%E8%A5%BF%E5%9C%9F%E5%AE%B6%E6%97%8F%E8%8B%97%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E%E5%85%AB%E9%9D%A2%E5%B1%B1%E6%99%AF%E5%8C%BA/64930968" class="text-primary hover:text-primary/80 font-medium flex items-center">
                                     More <i class="fa fa-arrow-right ml-1"></i>
                                 </a>
                             </div>
@@ -260,7 +308,7 @@
                     <!-- 景点卡片 3 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
                         <div class="relative h-64 overflow-hidden">
-                            <img src="https://picsum.photos/id/1041/600/400" alt="芙蓉镇" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <img src="./assets/furong.jpg" alt="芙蓉镇" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent"></div>
                             <div class="absolute bottom-4 left-4 text-white">
                                 <h3 class="text-xl font-bold">芙蓉镇</h3>
@@ -272,7 +320,7 @@
                         </div>
                         <div class="p-6">
                             <p class="text-gray-600 mb-4">
-                                芙蓉镇是一座具有2000多年历史的古镇，因电影《芙蓉镇》在此拍摄而闻名。镇内有瀑布穿镇而过，形成独特的"挂在瀑布上的千年古镇"景观。
+                                芙蓉镇是一座具有2000多年历史的古镇。镇内有瀑布穿镇而过，形成独特的"挂在瀑布上的千年古镇"景观。
                             </p>
                             <div class="flex justify-between items-center">
                                 <div class="flex items-center">
@@ -281,11 +329,11 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-half-o"></i>
                                     </div>
-                                    <span class="text-gray-500 text-sm ml-2">4.2 (1,567 评价)</span>
+                                    <span class="text-gray-500 text-sm ml-2">4.4 (1,405 评价)</span>
                                 </div>
-                                <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center">
+                                <a href="https://baike.baidu.com/item/%E6%B9%98%E8%A5%BF%E5%9C%9F%E5%AE%B6%E6%97%8F%E8%8B%97%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E%E8%8A%99%E8%93%89%E9%95%87%E6%99%AF%E5%8C%BA/64930967" class="text-primary hover:text-primary/80 font-medium flex items-center">
                                     More <i class="fa fa-arrow-right ml-1"></i>
                                 </a>
                             </div>
@@ -295,7 +343,6 @@
             </div>
         </section>
 
-        <!-- 文化 -->
         <section id="culture" class="py-20 bg-white">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-16">
@@ -310,7 +357,7 @@
                     <!-- 文化卡片 1 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
                         <div class="h-56 overflow-hidden">
-                            <img src="https://picsum.photos/id/1040/600/400" alt="土家族摆手舞" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <img src="./assets/baishouwu.jpg" alt="土家族摆手舞" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-3 text-primary">土家族摆手舞</h3>
@@ -323,12 +370,12 @@
                     <!-- 文化卡片 2 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
                         <div class="h-56 overflow-hidden">
-                            <img src="https://picsum.photos/id/1045/600/400" alt="苗族芦笙舞" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <img src="./assets/miaozu.jpg" alt="苗族银饰" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3 text-primary">苗族芦笙舞</h3>
+                            <h3 class="text-xl font-bold mb-3 text-primary">苗族银饰</h3>
                             <p class="text-gray-600">
-                                芦笙舞是苗族文化的重要组成部分，舞者边吹芦笙边跳舞，动作轻盈优美，节奏富有变化。每年的苗年节，芦笙舞是最主要的庆祝活动之一。
+                                苗族银饰，以其多样的品种、奇美的造型与精巧的工艺，承载着千年历史文化，是苗家人财富与美的象征，展现出一个瑰丽多彩的艺术世界与丰富的精神内涵。
                             </p>
                         </div>
                     </div>
@@ -336,7 +383,7 @@
                     <!-- 文化卡片 3 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
                         <div class="h-56 overflow-hidden">
-                            <img src="https://picsum.photos/id/1047/600/400" alt="吊脚楼建筑" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <img src="./assets/diaojiaolou.jpg" alt="吊脚楼建筑" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-3 text-primary">吊脚楼建筑</h3>
@@ -356,7 +403,7 @@
                     <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-dark mb-4">湘西美食</h2>
                     <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
                     <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                        湘西美食以其独特的口味和丰富的民族特色而闻名，融合了土家族和苗族的烹饪传统，辣、酸、香是其主要特点。
+                        湘西美食以其独特的口味和丰富的民族特色而闻名，融合了土家族和苗族的烹饪传统，辣、香是其主要特点。
                     </p>
                 </div>
 
@@ -364,22 +411,22 @@
                     <!-- 美食卡片 1 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
                         <div class="relative h-64 overflow-hidden">
-                            <img src="https://picsum.photos/id/1080/600/400" alt="湘西酸鱼" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <img src="./assets/larou.jpg" alt="湘西腊肉" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent"></div>
                             <div class="absolute bottom-4 left-4 text-white">
-                                <h3 class="text-xl font-bold">湘西酸鱼</h3>
+                                <h3 class="text-xl font-bold">湘西腊肉</h3>
                             </div>
                         </div>
                         <div class="p-6">
                             <p class="text-gray-600 mb-4">
-                                湘西酸鱼是土家族和苗族的传统名菜，以新鲜鱼肉为主料，配以糯米粉、辣椒、生姜等调料腌制而成，口感酸辣可口，香气扑鼻。
+                                湘西腊肉咸香里裹着土家山货的醇厚，肥瘦间流淌着苗寨年节的热辣风情。
                             </p>
                             <div class="flex items-center">
                                 <div class="text-sm text-gray-500 mr-3">
                                     <i class="fa fa-fire text-red-500 mr-1"></i> 辣度: 🌶🌶🌶
                                 </div>
                                 <div class="text-sm text-gray-500">
-                                    <i class="fa fa-leaf text-green-500 mr-1"></i> 特色: 酸辣鲜香
+                                    <i class="fa fa-leaf text-green-500 mr-1"></i> 特色: 口感醇香
                                 </div>
                             </div>
                         </div>
@@ -388,15 +435,15 @@
                     <!-- 美食卡片 2 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
                         <div class="relative h-64 overflow-hidden">
-                            <img src="https://picsum.photos/id/1081/600/400" alt="血粑鸭" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <img src="./assets/米豆腐.jpg" alt="米豆腐" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent"></div>
                             <div class="absolute bottom-4 left-4 text-white">
-                                <h3 class="text-xl font-bold">血粑鸭</h3>
+                                <h3 class="text-xl font-bold">米豆腐</h3>
                             </div>
                         </div>
                         <div class="p-6">
                             <p class="text-gray-600 mb-4">
-                                血粑鸭是湘西地区的传统名菜，将鸭血与糯米混合制成血粑，再与鸭肉一起烹制，色泽红亮，口感软糯，味道醇厚。
+                                米豆腐是将大米磨浆加碱熬制冷却而成的传统小吃，形如豆腐，口感滑嫩，酸辣可口，深受人们喜爱。
                             </p>
                             <div class="flex items-center">
                                 <div class="text-sm text-gray-500 mr-3">
@@ -412,7 +459,7 @@
                     <!-- 美食卡片 3 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
                         <div class="relative h-64 overflow-hidden">
-                            <img src="https://picsum.photos/id/1082/600/400" alt="苗家社饭" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <img src="./assets/shefan.jpg" alt="社饭" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent"></div>
                             <div class="absolute bottom-4 left-4 text-white">
                                 <h3 class="text-xl font-bold">苗家社饭</h3>
@@ -420,7 +467,7 @@
                         </div>
                         <div class="p-6">
                             <p class="text-gray-600 mb-4">
-                                社饭是苗族祭祀社稷时所做的饭，用青蒿、野葱、腊肉等与糯米一起蒸煮而成，清香可口，是苗族人喜爱的传统美食。
+                                社饭是祭祀社稷所做的饭，用野葱、腊肉等与糯米蒸煮而成，清香可口，是苗人喜爱的美食。
                             </p>
                             <div class="flex items-center">
                                 <div class="text-sm text-gray-500 mr-3">
@@ -448,11 +495,11 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- 名人卡片 1 -->
+
                     <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
-                        <div class="flex flex-col md:flex-row">
+                        <div class="flex flex-col md:flex-row h-full">
                             <div class="md:w-1/3 h-48 md:h-auto overflow-hidden">
-                                <img src="https://picsum.photos/id/1005/300/400" alt="沈从文" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                                <img src="./assets/shencongwen.jpg" alt="沈从文" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                             </div>
                             <div class="md:w-2/3 p-6">
                                 <h3 class="text-xl font-bold mb-2 text-primary">沈从文</h3>
@@ -464,11 +511,10 @@
                         </div>
                     </div>
 
-                    <!-- 名人卡片 2 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
-                        <div class="flex flex-col md:flex-row">
+                        <div class="flex flex-col md:flex-row h-full">
                             <div class="md:w-1/3 h-48 md:h-auto overflow-hidden">
-                                <img src="https://picsum.photos/id/1012/300/400" alt="黄永玉" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                                <img src="./assets/huangyongyu.jpg" alt="黄永玉" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                             </div>
                             <div class="md:w-2/3 p-6">
                                 <h3 class="text-xl font-bold mb-2 text-primary">黄永玉</h3>
@@ -480,11 +526,10 @@
                         </div>
                     </div>
 
-                    <!-- 名人卡片 3 -->
                     <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
-                        <div class="flex flex-col md:flex-row">
+                        <div class="flex flex-col md:flex-row h-full">
                             <div class="md:w-1/3 h-48 md:h-auto overflow-hidden">
-                                <img src="https://picsum.photos/id/1027/300/400" alt="宋祖英" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                                <img src="./assets/songzuying.jpg" alt="宋祖英" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                             </div>
                             <div class="md:w-2/3 p-6">
                                 <h3 class="text-xl font-bold mb-2 text-primary">宋祖英</h3>
@@ -512,28 +557,28 @@
 
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     <div class="overflow-hidden rounded-lg group">
-                        <img src="https://picsum.photos/id/1039/500/500" alt="湘西山水" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <img src="./assets/1.jpg" alt="1" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
                     </div>
                     <div class="overflow-hidden rounded-lg group">
-                        <img src="https://picsum.photos/id/1040/500/500" alt="吊脚楼" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <img src="./assets/2.jpg" alt="2" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
                     </div>
                     <div class="overflow-hidden rounded-lg group">
-                        <img src="https://picsum.photos/id/1041/500/500" alt="古镇风光" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <img src="./assets/3.jpg" alt="3" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
                     </div>
                     <div class="overflow-hidden rounded-lg group">
-                        <img src="https://picsum.photos/id/1042/500/500" alt="山间云雾" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <img src="./assets/4.jpg" alt="4" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
                     </div>
                     <div class="overflow-hidden rounded-lg group">
-                        <img src="https://picsum.photos/id/1043/500/500" alt="沱江风光" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <img src="./assets/5.jpg" alt="5" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
                     </div>
                     <div class="overflow-hidden rounded-lg group">
-                        <img src="https://picsum.photos/id/1044/500/500" alt="少数民族服饰" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <img src="./assets/6.jpg" alt="6" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
                     </div>
                     <div class="overflow-hidden rounded-lg group">
-                        <img src="https://picsum.photos/id/1045/500/500" alt="传统节日" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <img src="./assets/7.jpg" alt="7" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
                     </div>
                     <div class="overflow-hidden rounded-lg group">
-                        <img src="https://picsum.photos/id/1046/500/500" alt="乡村风光" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <img src="./assets/8.jpg" alt="8" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
                     </div>
                 </div>
             </div>
@@ -541,7 +586,42 @@
     </main>
 
     <script>
+        // 弹窗控制
+        document.addEventListener('DOMContentLoaded', function() {
+            const modalOverlay = document.getElementById('modal-overlay');
+            const modalCard = document.getElementById('modal-card');
+            const body = document.body;
+            
+            // 页面加载时禁用滚动
+            body.style.overflow = 'hidden';
+            
+            // 点击遮罩层关闭弹窗
+            modalOverlay.addEventListener('click', function(e) {
+                if (e.target === modalOverlay) {
+                    closeModal();
+                }
+            });
+            
+            // 关闭弹窗函数
+            function closeModal() {
+                modalCard.style.transform = 'scale(0.95)';
+                modalCard.style.opacity = '0';
+                setTimeout(() => {
+                    modalOverlay.style.display = 'none';
+                    // 恢复页面滚动
+                    body.style.overflow = 'auto';
+                }, 200);
+            }
+            
+            // ESC键关闭弹窗
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modalOverlay.style.display !== 'none') {
+                    closeModal();
+                }
+            });
+        });
         
+        // 循环打字机效果
         document.addEventListener('DOMContentLoaded', function() {
             const titleElement = document.getElementById('typing-title');
             const originalText = '湘西 <span class="text-accent">神秘而迷人</span>';
